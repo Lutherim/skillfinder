@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 60% cream/linen, 30% sage + clay, 10% ochre */
+body { @apply bg-cream font-sans text-base leading-[1.6] text-earth; }
+h1, h2, h3 { @apply font-display text-clay; }
+
+@layer components {
+  .input { @apply w-full rounded-lg border border-sage/40 bg-white px-3 py-2 text-sm text-clay focus:outline-none focus:ring-2 focus:ring-sage; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-lg bg-ochre px-4 py-2 text-[0.938rem] font-bold tracking-[0.02em] text-cream hover:bg-ochre-dark disabled:opacity-50; }
+  .btn-ghost { @apply rounded-lg border border-sage/50 px-3 py-1.5 text-sm font-medium text-clay hover:bg-linen; }
+  .card { @apply rounded-xl border border-sage/20 bg-linen p-4; }
+  .badge { @apply text-xs font-medium uppercase tracking-wide text-sage-dark; }
+  /* YouTube-style shimmer */
+  .skeleton { @apply rounded-md; background: linear-gradient(90deg, #ebe5dc 25%, #f7f3ec 50%, #ebe5dc 75%); background-size: 200% 100%; animation: shimmer 1.3s infinite linear; }
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
